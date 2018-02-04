@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eu.liebrand.pipemonitor"
+    android:versionCode="1">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.samsung.wmanager.APP" />
+    <uses-permission android:name="com.samsung.WATCH_APP_TYPE.Companion" />
+    <uses-permission android:name="com.samsung.WATCH_APP_TYPE.Linked_Follower" />
+    <uses-permission android:name="com.samsung.WATCH_APP_TYPE.Integrated" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="com.samsung.accessory.permission.ACCESSORY_FRAMEWORK" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_mylauncher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme">
+
+        <activity android:name=".MainActivity"
+            android:hardwareAccelerated="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MyPreferencesActivity"
+            android:label="@string/title_activity_my_preferences"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".NetworkService"
+            android:exported="false" />
+
+        <activity android:name=".RegisterActivity"></activity>
+
+        <receiver android:name="com.samsung.android.sdk.accessory.RegisterUponInstallReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.accessory.action.REGISTER_AGENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.samsung.android.sdk.accessory.ServiceConnectionIndicationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.accessory.action.SERVICE_CONNECTION_REQUESTED" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="eu.liebrand.pipemonitor.ProviderImpl">
+        </service>
+        <meta-data
+            android:name="AccessoryServicesLocation"
+            android:value="/res/xml/accessoryservices.xml" />
+
+
+    </application>
+
+</manifest>

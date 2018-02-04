@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditTextPreference android:title="UdpPipe Pipe #1 Name"
+        android:key="pipeName1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:summary="Please provide a name for this pipe setup"
+        tools:inputType="textAutoComplete" />
+
+    <EditTextPreference android:title="UdpPipe Tail Instance IP 1"
+        android:key="tailinstanceIP1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:summary="Please provide the IP / hostname where your tail instance runs"
+        tools:inputType="textUri" />
+
+    <EditTextPreference android:title="UdpPipe Tail Instance ADMIN Port 1"
+        android:key="tailinstancePort1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:summary="Please provide the IP / hostname where your tail instance runs"
+        android:defaultValue="16002"
+        tools:inputType="number" />
+
+    <EditTextPreference android:title="UdpPipe Pipe #2 Name"
+        android:key="pipeName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:summary="Please provide a name for this pipe setup"
+        tools:inputType="textAutoComplete" />
+
+    <EditTextPreference android:title="UdpPipe Tail Instance IP 2"
+        android:key="tailinstanceIP2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:summary="Please provide the IP / hostname where your tail instance runs"
+        tools:inputType="textUri" />
+
+    <EditTextPreference android:title="UdpPipe Tail Instance ADMIN Port 2"
+        android:key="tailinstancePort2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:summary="Please provide the IP / hostname where your tail instance runs"
+        android:defaultValue="16002"
+        tools:inputType="number" />
+
+</PreferenceScreen>

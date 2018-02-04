@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PipeMonitor</string>
+    <string name="title_activity_my_preferences">Settings</string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="menu_register">Register</string>
+    <string name="detailsShow">Details</string>
+    <string name="detailsHide">Hide</string>
+    <string name="statusdead">dead</string>
+    <string name="lasthour">Last Hour</string>
+    <string name="lastday">Last Day</string>
+    <string name="lasthide">Hide</string>
+</resources>

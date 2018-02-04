@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#606060">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:components="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    tools:context="eu.liebrand.pipemonitor.MainActivity">
+
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/background"
+        android:text="Refresh"/>
+    <TextView
+        android:id="@+id/lblpipe1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRefresh"
+        android:text="UdpPipe #1:"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+    <TextView
+        android:id="@+id/valpipe1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRefresh"
+        android:layout_toRightOf="@id/lblpipe1"
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+    <LinearLayout
+        android:id="@+id/animgroup1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/lblpipe1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iconserver1left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
+        <eu.liebrand.pipemonitor.PulseLine
+            android:id="@+id/anline1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            components:src="@drawable/aniline" />
+
+        <ImageView
+            android:id="@+id/iconserver1right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblfrom1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/animgroup1"
+        android:text="-"/>
+
+    <TextView
+        android:id="@+id/lblto1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/animgroup1"
+        android:textAlignment="viewEnd"
+        android:text="-"/>
+
+    <TextView
+        android:id="@+id/lblstatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblfrom1"
+        android:text="Status"/>
+
+    <TextView
+        android:id="@+id/valstatus1"
+        android:layout_toEndOf="@id/lblstatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/lblstatus1"
+        android:layout_below="@id/lblfrom1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="-"
+        android:textAlignment="viewEnd" />
+
+    <RelativeLayout
+        android:id="@+id/container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valstatus1">
+
+    <TextView
+        android:id="@+id/valserverinfo1a"
+        android:layout_marginTop="15pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/valserverinfo1b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valserverinfo1a"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/valserverinfo1c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valserverinfo1b"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/valserverinfo1d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valserverinfo1c"
+        android:text=""/>
+    
+    <eu.liebrand.pipemonitor.BarChartView
+        android:id="@+id/graph1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btndetail1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container1"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/background"
+        android:text="@string/detailsShow" />
+
+
+    <Button
+        android:id="@+id/btnstathour1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container1"
+        android:layout_toRightOf="@id/btndetail1"
+        android:textColor="@color/background"
+        android:text="Last Hour" />
+    <Button
+        android:id="@+id/btnstatday1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Day"
+        android:layout_alignBaseline="@+id/btnstathour1"
+        android:layout_alignBottom="@+id/btnstathour1"
+        android:textColor="@color/background"
+        android:layout_toEndOf="@+id/btnstathour1" />
+
+    <View
+        android:id="@+id/hoizLine"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:layout_below="@id/btndetail1"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorText" />
+
+    <TextView
+        android:id="@+id/lblpipe2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoizLine"
+        android:layout_marginTop="20pt"
+        android:text="UdpPipe #2:"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+    <TextView
+        android:id="@+id/valpipe2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hoizLine"
+        android:layout_toEndOf="@id/lblpipe2"
+        android:layout_marginTop="20pt"
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+    <LinearLayout
+        android:id="@+id/animgroup2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/lblpipe2"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iconserver2left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
+        <eu.liebrand.pipemonitor.PulseLine
+            android:id="@+id/anline2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            components:src="@drawable/aniline" />
+
+        <ImageView
+            android:id="@+id/iconserver2right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/lblfrom2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/animgroup2"
+        android:text="-"/>
+
+    <TextView
+        android:id="@+id/lblto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/animgroup2"
+        android:textAlignment="viewEnd"
+        android:text="-"/>
+
+    <TextView
+        android:id="@+id/lblstatus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblfrom2"
+        android:text="Status"/>
+
+    <TextView
+        android:id="@+id/valstatus2"
+        android:layout_toEndOf="@id/lblstatus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/lblstatus2"
+        android:layout_below="@id/lblto2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="-"
+        android:textAlignment="viewEnd" />
+
+    <RelativeLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valstatus2">
+
+    <TextView
+        android:id="@+id/valserverinfo2a"
+        android:layout_marginTop="15pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/valserverinfo2b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valserverinfo2a"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/valserverinfo2c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valserverinfo2b"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/valserverinfo2d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/valserverinfo2c"
+        android:text=""/>
+
+    <eu.liebrand.pipemonitor.BarChartView
+        android:id="@+id/graph2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btndetail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container2"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/background"
+        android:text="@string/detailsShow"
+         />
+
+    <Button
+        android:id="@+id/btnstathour2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container2"
+        android:layout_toRightOf="@id/btndetail2"
+        android:textColor="@color/background"
+        android:text="Last Hour" />
+
+    <Button
+        android:id="@+id/btnstatday2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container2"
+        android:layout_toRightOf="@id/btnstathour2"
+        android:textColor="@color/background"
+        android:text="Last Day" />
+
+    <TextView
+        android:id="@+id/lblinstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnstatday2"
+        android:text=""/>
+
+
+
+
+</RelativeLayout>
+</ScrollView>
